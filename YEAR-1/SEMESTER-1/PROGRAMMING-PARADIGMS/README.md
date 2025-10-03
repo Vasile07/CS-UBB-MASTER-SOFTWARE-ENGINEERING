@@ -1,1 +1,3 @@
 # PROGRAMMING PARADIGMS
+
+- [Lab 1: Introduction to Mozart/Oz](../PROGRAMMING-PARADIGMS/LAB-1)
