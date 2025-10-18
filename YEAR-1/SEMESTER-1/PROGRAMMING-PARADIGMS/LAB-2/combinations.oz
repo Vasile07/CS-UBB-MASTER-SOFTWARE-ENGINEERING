@@ -49,9 +49,9 @@ end
 
 declare
 fun {CombEff2 N K}
-   if K == 0 then 1
+   if K == 0 then 1.0
    else
-      {CombEff2 N (K-1)} * ((N-K+1)/K)
+      {CombEff2 N (K-1)} * ({IntToFloat (N - K + 1)} / {IntToFloat K})
    end
 end
 

@@ -41,15 +41,23 @@ declare
 fun {CombEff1 N K}
    if K == 0 then 1
    else
-      {Numerator N (N-K+1)} div {Denominator K}
+      {Numerator N K} div {Denominator K}
    end
 end
 
+{Browse {CombEff1 N K}}
+
+declare
+fun {CombEff2 N K}
+   if K == 0 then 1.0
+   else
+      {CombEff2 N (K-1)} * {IntToFloat (N - K + 1)} / {IntToFloat K}
+   end
+end
+
+{Browse {CombEff2 N K}}
 
 
-%{Browse {Numerator N K}}
-%{Browse {Denominator K}}
-%{Browse {CombEff1 N K}}
 
 
 

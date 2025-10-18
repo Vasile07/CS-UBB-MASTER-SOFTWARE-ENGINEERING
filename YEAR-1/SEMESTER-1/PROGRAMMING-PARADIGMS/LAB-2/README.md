@@ -35,7 +35,7 @@ Given a list `L = [x₁ x₂ ... xₙ]`, its reverse is `[xₙ ... x₂ x₁]`.
   if `L` is empty, then `R` is empty; otherwise, it recursively reverses `[x₂ ... xₙ]`  
   and appends `x₁` to the accumulator `R`.
 
-➡️ [Solution](.)
+➡️ [Solution](./reverse.oz)
 
 ---
 
@@ -50,7 +50,7 @@ This can be useful, for example, to generate an infinite list of prime numbers.
 - **Function `GetAfter N`** — using the lazy prime list,  
   return the first prime number greater than a given value `N`.
 
-➡️ [Solution](.)
+➡️ [Solution](./lazy.oz)
 
 ---
 
@@ -82,4 +82,4 @@ Implement the following functions that manipulate or query a BST:
 4. **`IsSortedBST :: <BTree> → <Bool>`**  
    Checks whether the given tree satisfies the sortedness property.
 
-➡️ [Solution](.)
+➡️ [Solution](./binary_search_tree.oz)
