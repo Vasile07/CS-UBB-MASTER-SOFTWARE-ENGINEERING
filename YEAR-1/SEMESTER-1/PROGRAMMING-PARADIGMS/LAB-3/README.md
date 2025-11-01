@@ -9,7 +9,7 @@ Examples:
 - `{Member [a b c] b}` → `true`  
 - `{Member [a b c] d}` → `false`
 
-➡️ [Solution](.)
+➡️ [Solution](./member.oz)
 
 ---
 
@@ -23,7 +23,7 @@ Implement two functions:
 - **`Drop Xs N`** — returns the list `Xs` without its first `N` elements.  
   Example: `{Drop [1 4 3 6 2] 3}` → `[6 2]`
 
-➡️ [Solution](.)
+➡️ [Solution](./take_and_drop.oz)
 
 ---
 
@@ -46,7 +46,7 @@ converting a pairlist into a pair of lists.
 Example:  
 `{UnZip [a#1 b#2 c#3]}` → `[a b c]#[1 2 3]`
 
-➡️ [Solution](.)
+➡️ [Solution](./zip_and_unzip.oz)
 
 ---
 
@@ -64,7 +64,7 @@ Try two versions:
 1. One that assumes `Y` is an element of `Xs`.  
 2. One that returns `0` if `Y` does not occur in `Xs`.
 
-➡️ [Solution](.)
+➡️ [Solution](./position.oz)
 
 ---
 
@@ -81,4 +81,4 @@ Implement a function **`Eval`** that takes an arithmetic expression and returns 
 Example:  
 `add(int(1) mul(int(3) int(4)))` → `13`
 
-➡️ [Solution](.)
+➡️ [Solution](./arithmetic_expressions.oz)
