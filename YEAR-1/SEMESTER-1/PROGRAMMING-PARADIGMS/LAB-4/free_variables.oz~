@@ -1,0 +1,44 @@
+declare
+fun {Member L E}
+   case L
+   of nil then false
+   [] H|T then if H == E then true
+	       else {Member T E}
+	       end
+   end
+end
+
+fun {Intersect L1 L2}
+   case L1
+   of nil then L2
+   [] H|T then if {Member L2 H} then {Intersect T L2}
+	       else H|{Intersect T L2}
+	       end
+   end
+end
+
+fun {Minus L1 L2}
+   case L1
+   of nil then nil
+   [] H|T then if {Member L2 H} then {Minus T L2}
+	       else H|{Minus T L2}
+	       end
+   end
+end
+
+/**
+                {  id, expr = id
+FreeSet(expr) = {  FreeSet(expr1) U FreeSet(expr2), expr = apply(expr1 expr2)
+                {  FreeSet(expr1) \ {id}, expr = lam(id expr1)
+                {  FreeSet(expr1) U (FreeSet(expr2) \ {id}), expr = let(id#expr1 expr2)
+**/
+fun {FreeSet Expr}
+   case Expr
+   of apply(Expr1 Expr2) then {Intersect {FreeSet Expr1} {FreeSet Expr2}}
+   [] lam(Id Expr1) then {Minus {FreeSet Expr1} [Id]}
+   [] let(Id#Expr1 Expr2) then {Intersect {FreeSet Expr1} {Minus {FreeSet Expr2} [Id]}}
+   [] Id then Id
+   end
+end
+
+{Browse {FreeSet apply(x let(x#y x))}}
