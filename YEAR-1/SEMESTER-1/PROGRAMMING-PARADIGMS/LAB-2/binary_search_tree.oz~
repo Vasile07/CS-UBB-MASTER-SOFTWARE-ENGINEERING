@@ -1,0 +1,42 @@
+declare
+fun {Insert BTree Val}
+   case BTree
+   of nil then leaf(Val)
+   [] leaf(V) then if Val < V then node(V, leaf(Val), nil)
+			else node(V, nil, leaf(Val))
+		   end
+   [] node(V, Left, Right) then if Val < V then node(V, {Insert Left Val}, Right)
+			      else node(V, Left, {Insert Right Val})
+			      end
+   end
+end
+
+
+/*
+       5
+     /   \
+    3     9
+   /     / \ 
+  1     6   11
+ /
+0
+
+
+
+*/
+
+declare
+BTree1 = nil
+BTree2 = {Insert BTree1 5}
+%BTree3 = {Insert BTree2 3}
+%BTree4 = {Insert BTree3 9}
+%BTree5 = {Insert BTree4 6}
+%BTree6 = {Insert BTree5 11}
+%BTree7 = {Insert BTree6 1}
+%BTree = {Insert BTree7 0}
+
+{Browse BTree2}
+
+
+
+

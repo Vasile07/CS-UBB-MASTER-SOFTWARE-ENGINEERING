@@ -1,0 +1,26 @@
+declare
+fun {Fibo N}
+   case N of
+      1 then 1
+   [] 2 then 1
+   [] M then {{Fibo (M-1)} + {Fibo (M-2)}}
+   end
+end
+
+declare
+fun {FiboEff N A1 A2}
+   case N of
+      1 then A1
+   [] 2 then A2
+   [] M then {FiboEff (M-1) A2 (A1 + A2)}
+   end
+end
+
+declare
+fun {FiboEffInterface N}
+   {FiboEff N 1 1}
+end
+
+{Browse {Fibo 5}}
+{Browse {FiboEffInterface 5}}
+
